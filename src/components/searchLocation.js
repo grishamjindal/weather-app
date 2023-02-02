@@ -41,8 +41,8 @@ function SearchLocation({ handleSelection }) {
     };
 
     const handleInputChange = (val) => {
+        setQuery(val)        
         if (val) {
-            setQuery(val)        
             debounceFn(val)
         } else {
             setList([])
