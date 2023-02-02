@@ -24,7 +24,7 @@ function SearchLocation({ handleSelection }) {
         setIsVisible(true)
     }
 
-    const debounceFn = useCallback(_debounce(fetchLocations, 500), []);
+    const debounceFn = useCallback(() => _debounce(fetchLocations, 500), []);
 
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, false);

@@ -21,14 +21,14 @@ function App() {
   }, [])
   
   useEffect(() => {
-    fetchData()
-  }, [lat,long])
-
     const fetchData = async () => {
       let result = await fetchWeatherData(lat, long)      
       console.log(result)
       setData(result)
     }
+    fetchData()
+  }, [lat,long])
+
   
   const handleSelection = (param) => {
     setLat(param.latitude);
