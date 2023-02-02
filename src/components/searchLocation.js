@@ -24,7 +24,8 @@ function SearchLocation({ handleSelection }) {
         setIsVisible(true)
     }
 
-    const debounceFn = useCallback(() => _debounce(fetchLocations, 500), []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debounceFn = useCallback(_debounce((newValue) => fetchLocations(newValue), 500), []);
 
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, false);
